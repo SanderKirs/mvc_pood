@@ -3,3 +3,6 @@ class ItemExists(Exception):
 
 class ItemNotExists(Exception):
     pass
+
+class ListEmpty(Exception):
+    pass

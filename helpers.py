@@ -1,15 +1,59 @@
-import exception
+import exceptions
+from product import Product
 
-
-#Represents shops structure
-#List of Product type objects
+# repsresents shop structure
+# list of Product type objects
 items = []
 
-#Add item to items
+# add item to items
 def addItem(name, price, amount):
-    #Create the product with the required descriptions
-    product = Product("name, price, amount")
-    #Check if the item already exists or not
+    global items
+    # create product with reqiure description
+    product = Product(name, price, amount)
+    # control if item already exists
     if product in items:
-        raise exception.ItemExists("Item {} already exists".format(name))
-    else: items.append(product)
+        raise exceptions.ItemExists("Item {} is exists".format(name))
+    else:
+        items.append(product)
+
+# show items
+def showItems():
+    global items
+    # control if items exists
+    if len(items) == 0:
+        raise exceptions.ItemExists("List of items is empty")
+    else:
+        return items
+# show item
+def showItem(name):
+    global items
+    # control all items step by step
+    for item in items:
+        # if the name is the same as we search
+        if(item.getName() == name):
+            return item
+        else:
+            continue
+            raise exceptions.ItemExists("Not found {} item".format(name))
+def deleteItem(name):
+    global items
+    # control all items step by step
+    for item in items:
+        # if the name is the same as we search
+        if(item.getName() == name):
+            items.remove(item)
+        else:
+            continue
+            raise exceptions.ItemExists("Not found {} item".format(name))
+
+#delete all items
+def deleteAllItems():
+    global items
+    items.clear()
+
+def updateItem(name, newname, newprice, newamount):
+    global items
+    # control all items step by step
+    for item in items:
+        # if the name is the same as we search
+        if (item.getName() == name):

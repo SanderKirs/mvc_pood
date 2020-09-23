@@ -1,5 +1,3 @@
-import exception
-
 class Controller:
     def __init__(self, model, view):
         self.model = model
@@ -7,6 +5,39 @@ class Controller:
 
     def addItem(self, name, price, amount):
         try:
-            print("OK")
+            self.model.addItem(name, price, amount)
+            print("Ok!")
         except:
-            print("Error")
+            print("Problem!")
+
+    def showItems(self):
+        items = self.model.showItems()
+        self.view.showItems(items)
+
+    def showItem(self, name):
+        try:
+            item = self.model.showItem(name)
+            self.view.showItem(item)
+        except:
+            self.view.noItemError(name)
+
+    def deleteItem(self, name):
+        try:
+            self.model.deleteItem(name)
+            self.view.deleteItem(name)
+        except:
+            self.view.noItemError(name)
+
+    def deleteAllItems(self):
+        try:
+            self.model.deleteAllItems()
+            self.view.deleteAllItems()
+        except:
+            self.view.ListEmpty()
+
+    def updateItem(self, name, newname, newprice, newamount):
+        try:
+            self.model.updateItem(name, newname, newprice, newamount)
+            self.view.updateItem(name, newname, newprice, newamount)
+        except:
+            self.view.noItemError(name)

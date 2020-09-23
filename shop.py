@@ -1,3 +1,4 @@
+# shop.py
 class Shop:
     def __init__(self):
         self.products = []
@@ -8,7 +9,6 @@ class Shop:
             description += repr(product)
             description += "\n=================\n"
         return description
-
 
     def addProduct(self, product):
         self.products.append(product)
