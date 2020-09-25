@@ -24,5 +24,5 @@ class Model:
     def deleteAllItems(self):
         return helpers.deleteAllItems()
 
-    def updateItem(self, name, newname, newprice, newamount):
-        return helpers.updateItem(name, newname, newprice, newamount)
+    def updateItem(self,name, price, amount):
+        return helpers.updateItem(name, price, amount)

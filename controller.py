@@ -35,9 +35,9 @@ class Controller:
         except:
             self.view.ListEmpty()
 
-    def updateItem(self, name, newname, newprice, newamount):
+    def updateItem(self,name, price, amount):
         try:
-            self.model.updateItem(name, newname, newprice, newamount)
-            self.view.updateItem(name, newname, newprice, newamount)
+            self.model.updateItem(name, price, amount)
+            self.view.updateItem(name, price, amount)
         except:
             self.view.noItemError(name)

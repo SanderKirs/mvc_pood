@@ -18,7 +18,7 @@ shop.addItem("bread", 0.80, 10)
 shop.addItem("milk", 0.50, 50)
 shop.addItem("wine", 5.60, 5)
 
-shop.updateItem("bread", "whitebread", 0.50, 20)
+shop.updateItem("bread", 0.50, 20)
 
 # show items
 shop.showItems()

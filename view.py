@@ -38,7 +38,7 @@ class View:
         print("Item {} has been deleted.".format(name))
         print("============================")
 
-    def updateItem(name, newname, newprice, newamount):
+    def updateItem(name, price, amount):
         print("============================")
-        print("Item {} now has a price of {} and there is {} of it.".format(newname,newprice,newamount))
+        print("Item {} now has a price of {} and there is {} of it.".format(name,price,amount))
         print("============================")

@@ -51,9 +51,19 @@ def deleteAllItems():
     global items
     items.clear()
 
-def updateItem(name, newname, newprice, newamount):
+#updates a single item
+def updateItem(name, price, amount):
     global items
-    # control all items step by step
+    isUpdated = False
+    # check all of the items one by one
     for item in items:
-        # if the name is the same as we search
-        if (item.getName() == name):
+        # if the name matches our search
+        if(item.getName() == name):
+            # update the item
+            item.setPrice(price)
+            item.setAmount(amount)
+            isUpdated = True
+        else:
+            continue
+    if (isUpdated != True):
+        raise exceptions.ItemNotExists("Not found {} item".format(name))
