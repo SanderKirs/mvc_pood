@@ -4,8 +4,12 @@
 from product import Product
 from shop import Shop
 from controller import Controller
+from controller import Stockcontroller
 from model import Model
 from view import View
+from stock import Stock
+from stockModel import Stockmodel
+from stockview import Stockview
 
 # create products
 bread = Product("bread", 0.80, 10)
@@ -18,7 +22,13 @@ shop.addItem("bread", 0.80, 10)
 shop.addItem("milk", 0.50, 50)
 shop.addItem("wine", 5.60, 5)
 
-shop.updateItem("bread", 0.50, 20)
+# create a stock and add products to the stock
 
-# show items
+stock = Stockcontroller(Stockmodel(Stock()), Stockview())
+
+stock.addItemStock("meelis", 0.80, 10)
+stock.addItemStock("melon", 0.95, 100)
+
+# ---Show all items---
 shop.showItems()
+stock.showItemsStock()
