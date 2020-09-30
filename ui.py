@@ -6,10 +6,11 @@ from shop import Shop
 from controller import Controller
 from controller import Stockcontroller
 from model import Model
+from model import Stockmodel
 from view import View
+from view import Stockview
 from stock import Stock
-from stockModel import Stockmodel
-from stockview import Stockview
+
 
 # create products
 bread = Product("bread", 0.80, 10)
