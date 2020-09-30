@@ -69,7 +69,7 @@ def updateItem(name, price, amount):
         raise exceptions.ItemNotExists("Not found {} item".format(name))
 
 
-#___Stock___#
+#-------Stock-------#
 stockItems = []
 
 # add item to items

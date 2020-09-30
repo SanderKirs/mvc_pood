@@ -26,6 +26,7 @@ class Model:
     def updateItem(self,name, price, amount):
         return helpers.updateItem(name, price, amount)
 
+#-------Stock-------#
 
 class Stockmodel:
     # get shop data - [] of products

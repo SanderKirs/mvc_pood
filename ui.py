@@ -24,6 +24,8 @@ shop.addItem("bread", 0.80, 10)
 shop.addItem("milk", 0.50, 50)
 shop.addItem("wine", 5.60, 5)
 
+
+
 # create a stock and add products to the stock
 
 stock = Stockcontroller(Stockmodel(Stock()), Stockview())

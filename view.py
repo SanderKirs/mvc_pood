@@ -43,7 +43,7 @@ class View:
         print("Item {} now has a price of {} and there is {} of it.".format(name,price,amount))
         print("============================")
 
-#___Stock___
+#-------Stock-------#
 
 class Stockview:
     def showItemsStock(self, stockItems):

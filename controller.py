@@ -42,6 +42,8 @@ class Controller:
         except:
             self.view.noItemError(name)
 
+#-------Stock-------#
+
 class Stockcontroller:
     def __init__(self, stockmodel, stockview):
         self.stockmodel = stockmodel
