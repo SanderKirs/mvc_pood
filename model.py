@@ -34,21 +34,21 @@ class Stockmodel:
 
     # add item to items
     def addItemStock(self, name, price, amount):
-        stockhelpers.addItemStock(name, price, amount)
+        helpers.addItemStock(name, price, amount)
 
     # show items
     def showItemsStock(self):
-        return stockhelpers.showItemsStock()
+        return helpers.showItemsStock()
 
     # show item
     def showItemStock(self, name):
-        return stockhelpers.showItemStock(name)
+        return helpers.showItemStock(name)
 
     def deleteItemStock(self, name):
-        return stockhelpers.deleteItemStock(name)
+        return helpers.deleteItemStock(name)
 
     def deleteAllItemsStock(self):
-        return stockhelpers.deleteAllItemsStock()
+        return helpers.deleteAllItemsStock()
 
     def updateItemStock(self,name, price, amount):
-        return stockhelpers.updateItemStock(name, price, amount)
+        return helpers.updateItemStock(name, price, amount)

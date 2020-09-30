@@ -3,13 +3,14 @@
 # import classes and files
 from product import Product
 from shop import Shop
+from stock import Stock
 from controller import Controller
 from controller import Stockcontroller
 from model import Model
 from model import Stockmodel
 from view import View
 from view import Stockview
-from stock import Stock
+
 
 
 # create products
@@ -27,7 +28,7 @@ shop.addItem("wine", 5.60, 5)
 
 stock = Stockcontroller(Stockmodel(Stock()), Stockview())
 
-stock.addItemStock("meelis", 0.80, 10)
+stock.addItemStock("apple", 0.80, 10)
 stock.addItemStock("melon", 0.95, 100)
 
 # ---Show all items---
