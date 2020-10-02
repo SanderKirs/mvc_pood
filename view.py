@@ -1,5 +1,5 @@
 class View:
-    # show items
+
     def showItems(self, items):
         print("[Shop items]")
         print("============================")
@@ -11,7 +11,6 @@ class View:
             print("---------------------------")
         print("============================")
 
-    # show item
     def showItem(self, item):
         print("Shop item {}".format(item.getName()))
         print("============================")
@@ -22,7 +21,6 @@ class View:
         print("---------------------------")
         print("============================")
 
-    # no item error
     def noItemError(self, name):
         print("============================")
         print("Item {} does not exist in the shop".format(name))
@@ -51,6 +49,7 @@ class View:
 #-------Stock-------#
 
 class Stockview:
+
     def showItemsStock(self, stockItems):
         print("[Stock items]")
         print("============================")
@@ -62,7 +61,6 @@ class Stockview:
             print("---------------------------")
         print("============================")
 
-    # show item
     def showItemStock(self, item):
         print("Stock item {}".format(item.getName()))
         print("============================")
@@ -73,7 +71,6 @@ class Stockview:
         print("---------------------------")
         print("============================")
 
-    # no item error
     def noItemErrorStock(self, name):
         print("============================")
         print("Item {} does not exist in the stock".format(name))

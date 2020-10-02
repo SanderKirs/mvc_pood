@@ -1,4 +1,8 @@
+
+#-------Shop-------#
+
 class Controller:
+
     def __init__(self, model, view):
         self.model = model
         self.view = view
@@ -54,6 +58,7 @@ class Controller:
 #-------Stock-------#
 
 class Stockcontroller:
+
     def __init__(self, stockmodel, stockview):
         self.stockmodel = stockmodel
         self.stockview = stockview

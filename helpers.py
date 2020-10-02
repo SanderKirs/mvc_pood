@@ -1,12 +1,14 @@
 import exceptions
 from product import Product
 
-# repsresents shop structure
+# represesents shop structure
 # list of Product type objects
 items = []
 stockItems = []
 
-# add item to items
+#-------Shop-------#
+
+#Add an item
 def addItem(name, price, amount):
     global items
     # create product with reqiure description
@@ -17,7 +19,7 @@ def addItem(name, price, amount):
     else:
         items.append(product)
 
-# show items
+#Show all items
 def showItems():
     global items
     # control if items exists
@@ -25,7 +27,8 @@ def showItems():
         raise exceptions.ItemExists("List of items is empty")
     else:
         return items
-# show item
+
+#Show a single item
 def showItem(name):
     global items
     # control all items step by step
@@ -36,6 +39,8 @@ def showItem(name):
         else:
             continue
             raise exceptions.ItemExists("Not found {} item".format(name))
+
+#Delete a single item
 def deleteItem(name):
     global items
     # control all items step by step
@@ -47,12 +52,12 @@ def deleteItem(name):
             continue
             raise exceptions.ItemExists("Not found {} item".format(name))
 
-#delete all items
+#Delete all items
 def deleteAllItems():
     global items
     items.clear()
 
-#updates a single item
+#Update an item
 def updateItem(name, price, amount):
     global items
     print("kontroller update item fn")
@@ -72,16 +77,11 @@ def updateItem(name, price, amount):
         raise exceptions.ItemNotExists("Not found {} item".format(name))
 
 
-
-
-
-
-
-
 #-------Stock-------#
+
 stockItems = []
 
-# add item to items
+#Add an item to the stock
 def addItemStock(name, price, amount):
     global stockItems
     # create product with reqiure description
@@ -92,7 +92,7 @@ def addItemStock(name, price, amount):
     else:
         stockItems.append(product)
 
-# show items
+#Show the items in stock
 def showItemsStock():
     global stockItems
     # control if items exists
@@ -100,7 +100,8 @@ def showItemsStock():
         raise exceptions.ItemExists("List of items is empty")
     else:
         return stockItems
-# show item
+
+#Show an item that is in stock
 def showItemStock(name):
     global stockItems
     # control all items step by step
@@ -111,6 +112,8 @@ def showItemStock(name):
         else:
             continue
             raise exceptions.ItemExists("Not found {} item".format(name))
+
+#Delete's an item in the stock
 def deleteItemStock(name):
     global stockItems
     # control all items step by step
@@ -122,12 +125,12 @@ def deleteItemStock(name):
             continue
             raise exceptions.ItemExists("Not found {} item".format(name))
 
-#delete all items
+#Delete's all items in stock
 def deleteAllItemsStock():
     global stockItems
     stockItems.clear()
 
-#updates a single item
+#Updates an item in stock
 def updateItemStock(name, price, amount):
     global stockItems
     isUpdated = False
@@ -144,6 +147,7 @@ def updateItemStock(name, price, amount):
     if (isUpdated != True):
         raise exceptions.ItemNotExists("Not found {} item".format(name))
 
+#Adds items to the shop from the stock
 def addFromStock(name, price, takeAmount):
     global items
     global stockItems
