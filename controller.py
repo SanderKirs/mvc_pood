@@ -43,11 +43,11 @@ class Controller:
             self.view.noItemError(name)
 
     def addFromStock(self, name, price, takeAmount):
-
+        try:
             self.model.addFromStock(name, price, takeAmount)
             self.view.addFromStock(name, price, takeAmount)
-
-          #  self.view.noItemError(name)
+        except:
+            self.view.noItemError(name)
 
 
 

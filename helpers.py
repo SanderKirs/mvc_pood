@@ -167,6 +167,7 @@ def addFromStock(name, price, takeAmount):
             print("-_--_--_--_--_--_--_--_--_--_--_--_-")
             thing.setPrice(price)
             thing.setAmount(totalAmount)
+            break
         else:
             product = Product(name, price, takeAmount)
             if product in items:
