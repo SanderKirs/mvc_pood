@@ -21,7 +21,6 @@ wine = Product("wine", 5.60, 5)
 # create shop and add products to shop
 shop = Controller(Model(Shop()), View())
 shop.addItem("bread", 0.80, 10)
-shop.addItem("milk", 0.50, 50)
 shop.addItem("wine", 5.60, 5)
 
 
@@ -31,8 +30,14 @@ shop.addItem("wine", 5.60, 5)
 stock = Stockcontroller(Stockmodel(Stock()), Stockview())
 
 stock.addItemStock("apple", 0.80, 10)
-stock.addItemStock("melon", 0.95, 100)
+stock.addItemStock("melon", 0.9, 15)
+stock.addItemStock("bread", 0.80, 90)
+
+shop.addFromStock("bread", 0.50, 20)
 
 # ---Show all items---
 shop.showItems()
 stock.showItemsStock()
+
+
+

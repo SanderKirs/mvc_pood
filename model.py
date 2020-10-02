@@ -24,7 +24,10 @@ class Model:
         return helpers.deleteAllItems()
 
     def updateItem(self,name, price, amount):
-        return helpers.updateItem(name, price, amount)
+        helpers.updateItem(name, price, amount)
+
+    def addFromStock(self, name, price, newAmount):
+        helpers.addFromStock(name, price, newAmount)
 
 #-------Stock-------#
 

@@ -4,6 +4,7 @@ from product import Product
 # repsresents shop structure
 # list of Product type objects
 items = []
+stockItems = []
 
 # add item to items
 def addItem(name, price, amount):
@@ -12,7 +13,7 @@ def addItem(name, price, amount):
     product = Product(name, price, amount)
     # control if item already exists
     if product in items:
-        raise exceptions.ItemExists("Item {} is exists".format(name))
+        raise exceptions.ItemExists("Item {} already exists".format(name))
     else:
         items.append(product)
 
@@ -54,6 +55,8 @@ def deleteAllItems():
 #updates a single item
 def updateItem(name, price, amount):
     global items
+    print("kontroller update item fn")
+    print(items)
     isUpdated = False
     # check all of the items one by one
     for item in items:
@@ -67,6 +70,12 @@ def updateItem(name, price, amount):
             continue
     if (isUpdated != True):
         raise exceptions.ItemNotExists("Not found {} item".format(name))
+
+
+
+
+
+
 
 
 #-------Stock-------#
@@ -134,3 +143,34 @@ def updateItemStock(name, price, amount):
             continue
     if (isUpdated != True):
         raise exceptions.ItemNotExists("Not found {} item".format(name))
+
+def addFromStock(name, price, takeAmount):
+    global items
+    global stockItems
+    global updateItemStock
+    global addItem
+
+    for item in stockItems:
+        # if the name matches our search
+        if(item.getName() == name):
+            newStockAmount = (item.getAmount() - takeAmount)
+            item.setAmount(newStockAmount)
+            continue
+        else:
+            continue
+            raise exceptions.ItemNotExists("Item {} doesn't exist in stock".format(name))
+
+    for thing in items:
+        # if the name matches our search
+        if (thing.getName() == name):
+            totalAmount = thing.getAmount() + takeAmount
+            print("-_--_--_--_--_--_--_--_--_--_--_--_-")
+            thing.setPrice(price)
+            thing.setAmount(totalAmount)
+        else:
+            product = Product(name, price, takeAmount)
+            if product in items:
+                print("midagi läks nagu vussi")
+            else:
+                items.append(product)
+            break

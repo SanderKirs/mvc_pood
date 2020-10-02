@@ -6,9 +6,9 @@ class Controller:
     def addItem(self, name, price, amount):
         try:
             self.model.addItem(name, price, amount)
-            print("Ok!")
+            print("Item added!")
         except:
-            print("Problem!")
+            print("Item NOT added!")
 
     def showItems(self):
         items = self.model.showItems()
@@ -41,6 +41,15 @@ class Controller:
             self.view.updateItem(name, price, amount)
         except:
             self.view.noItemError(name)
+
+    def addFromStock(self, name, price, takeAmount):
+
+            self.model.addFromStock(name, price, takeAmount)
+            self.view.addFromStock(name, price, takeAmount)
+
+          #  self.view.noItemError(name)
+
+
 
 #-------Stock-------#
 
@@ -86,4 +95,11 @@ class Stockcontroller:
             self.stockmodel.updateItemStock(name, price, amount)
             self.stockview.updateItemStock(name, price, amount)
         except:
-            self.stockview.noItemError(name)
+            self.stockview.noItemErrorStock(name)
+
+    def addFromStock(self, name, price, takeAmount):
+        try:
+            self.model.addFromStock(name, price, takeAmount)
+            self.view.addFromStock(name, price, takeAmount)
+        except:
+            self.view.noItemError(name)
