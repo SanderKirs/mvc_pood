@@ -30,10 +30,10 @@ shop.addItem("wine", 5.60, 5)
 stock = Stockcontroller(Stockmodel(Stock()), Stockview())
 
 stock.addItemStock("apple", 0.80, 10)
-stock.addItemStock("melon", 0.9, 15)
+stock.addItemStock("melon", 0.9, 75)
 stock.addItemStock("bread", 0.80, 90)
 
-shop.addFromStock("bread", 0.50, 20)
+shop.addFromStock("bread", 0.50, 90)
 
 # ---Show all items---
 shop.showItems()

@@ -60,8 +60,7 @@ def deleteAllItems():
 #Update an item
 def updateItem(name, price, amount):
     global items
-    print("kontroller update item fn")
-    print(items)
+
     isUpdated = False
     # check all of the items one by one
     for item in items:
@@ -168,14 +167,16 @@ def addFromStock(name, price, takeAmount):
         # if the name matches our search
         if (thing.getName() == name):
             totalAmount = thing.getAmount() + takeAmount
-            print("-_--_--_--_--_--_--_--_--_--_--_--_-")
             thing.setPrice(price)
             thing.setAmount(totalAmount)
             break
         else:
             product = Product(name, price, takeAmount)
             if product in items:
-                print("midagi läks nagu vussi")
+                print("Error: Item {} already exists".format(name))
             else:
                 items.append(product)
             break
+    for item in stockItems:
+        if item.getAmount() <= 0:
+            deleteItemStock(item.getName())

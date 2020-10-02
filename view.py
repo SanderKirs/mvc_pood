@@ -43,7 +43,7 @@ class View:
 
     def addFromStock(self, name, price, newAmount):
         print("============================")
-        print("Item {} is now in the shop under the price of {} and under the amount of {}".format(name, price, newAmount))
+        print("Item {} is now in the shop under the price of {} € and under the amount of {}".format(name, price, newAmount))
         print("============================")
 
 #-------Stock-------#
